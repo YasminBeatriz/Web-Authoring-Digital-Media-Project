@@ -1,0 +1,167 @@
+<html>
+<head>
+	<title>Your Health</title>
+	<link rel = "stylesheet" type = "text/css" href = "newMenu.css">
+
+	<script type="text/javascript">
+
+	function ClassificatePressure ()
+	{
+		var sistolic, diastolic;
+		var recalculation = 'y';
+
+		sistolic = prompt("Enter your sistolic pressure: (120-180)", "120");
+		diastolic = prompt("Enter your sistolic pressure: (80-110)", "80");
+
+		if(sistolic != null && diastolic != null)
+		{
+			document.getElementById("input").innerHTML = "<font size = '2'> You entered: <br> Sistolic = " + sistolic + 
+			" &nbsp;" + "and Diastolic = " + diastolic + "</font>";
+
+			if(sistolic < 120 && diastolic < 80)
+				document.getElementById("Pressure").innerHTML = "Normal";
+			else if((sistolic >= 120 && sistolic < 140) || (diastolic >= 80 && diastolic < 90))
+				document.getElementById("Pressure").innerHTML = "Prehypertension";
+
+			else if((sistolic >= 140 && sistolic < 160) || (diastolic >= 90 && diastolic < 100))
+				document.getElementById("Pressure").innerHTML = "Hypertension: Stage 1";
+
+			else if(sistolic >= 160 && diastolic >= 100)
+				document.getElementById("Pressure").innerHTML = "Hypertension: Stage 2";			
+		}
+		else
+		{
+			document.getElementById("input").innerHTML = "<font size = '2'><p> Enter a valid input.</font>";
+			document.getElementById("Pressure").innerHTML = "";
+		}
+
+	}
+
+	function CalorieCounter ()
+	{
+		var foodType = ["Breads/Grains", "Fruits", "Vegetables", "Dairy", "Proteins", "Fats/Oils/Sweets"];
+		var servingsPerType = [foodType.length];
+		var caloresPerServing = [150, 35, 15, 120, 190, 73];
+		/* The information about the amount of calories per serving was taken from: 
+		http://www.dicasdemulher.com.br/como-a-piramide-alimentar-pode-melhorar-sua-dieta/
+		*/
+
+		var totalCaloriesPerType = [foodType.length];
+		var i;
+		var totalCalories = 0;
+
+		for(i = 0; i < foodType.length; i++)
+		{
+			servingsPerType[i] = parseFloat(prompt("How many servings have you eaten of " + foodType[i] + "?", "2"));
+		}
+
+		i = 0;
+
+		document.getElementById("TotalCalories").innerHTML = "<font size = '2'>You consumed: <br>";
+		while(i < foodType.length)
+		{
+			totalCaloriesPerType[i] = servingsPerType[i] * caloresPerServing[i];
+			i++;
+		}
+
+		i = 0;	
+		document.getElementById("type1").innerHTML = "<b>" + totalCaloriesPerType[i] + " calories on " + foodType[i++] + "</b>";
+		document.getElementById("type2").innerHTML = "<b>" + totalCaloriesPerType[i] + " calories on " + foodType[i++] + "</b>";
+		document.getElementById("type3").innerHTML = "<b>" + totalCaloriesPerType[i] + " calories on " + foodType[i++] + "</b>";
+		document.getElementById("type4").innerHTML = "<b>" + totalCaloriesPerType[i] + " calories on " + foodType[i++] + "</b>";
+		document.getElementById("type5").innerHTML = "<b>" + totalCaloriesPerType[i] + " calories on " + foodType[i++] + "</b>";
+		document.getElementById("type6").innerHTML = "<b>" + totalCaloriesPerType[i] + " calories on " + foodType[i++] + "</b>";
+
+		i = 0;
+		do
+		{
+			totalCalories = totalCalories + totalCaloriesPerType[i];
+			i++;
+		} while(i < foodType.length);
+
+		document.getElementById("total").innerHTML = "<b><font color = 'blue'>Total = " + totalCalories + " calories.</font>";
+	}
+
+	</script>
+</head>
+<body>
+	<div id = "container">
+		<div id = "body">
+			<div class = "menu">
+				<ul class = "menu-list">
+					<li><a href = "index.html">Home</a></li>
+					<li><a href = "HealthDevices.html">Health Devices</a>
+						<ul class = "sub-menu">
+							<li><a href="HealthDevices.html#HeartMonitor">Heart Monitor</a></li>
+							<li><a href="HealthDevices.html#BloodPressure">Blood Pressure Monitor</a></li>
+							<li><a href="HealthDevices.html#Glucose">Glucose Monitoring System</a></li>
+							<li><a href="HealthDevices.html#Scanadau">Scanadu Scout</a></li>
+							<li><a href="HealthDevices.html#Breathalyzer">Mobile Breathalyzer</a></li>
+						</ul>
+					</li>
+					<li><a href= "#">Health Information</a></li>
+						
+					<li><a href="Contact.html">Contact</a></li>
+					<li><a href="About.html">About</a></li>
+				</ul>
+			</div>
+			<div id = "title">
+				Check your health information
+			</div>
+		</div>
+
+		<center>
+			<table style = "width: 50%; text-align: center;">
+				<tr>
+					<td id = "functionPressure" class = "buttons">
+						<a onclick = "ClassificatePressure()" href = "#">Blood pressure classification</a>
+					</td>
+				</tr>
+			</table>
+
+			<script type="text/javascript">
+				document.write("Click on the link above and this website will classify your pression basing in your input.");
+			</script>
+
+			<div style = "position: absolute; width: 100%;">
+				<p id = "input"></p>
+			</div>
+
+			<div style = "position: relative; top: 50px; height: 13%;">
+				<font size = "14">
+					<p id = "Pressure"></p>
+				</font>
+			</div>
+
+			<br>
+			<br>
+			<br>
+			<table style = "width: 50%; text-align: center;">
+				<tr>
+					<td id = "functionCalories" class = "buttons">
+						<a onclick = "CalorieCounter()" href = "#">Calorie Counter</a>
+					</td>
+				</tr>
+			</table>
+
+			<div style = "position: relative; top: 20px; height: 25%;">
+				<p id = "TotalCalories"></p>
+				<p id = "type1"></p>
+				<p id = "type2"></p>
+				<p id = "type3"></p>
+				<p id = "type4"></p>
+				<p id = "type5"></p>
+				<p id = "type6"></p>
+				<p id = "total"></p>
+			</div>
+
+
+
+
+		</center>
+		<p></p>
+
+		<div id = "footer"></div>
+	</div>
+</body>
+</html>

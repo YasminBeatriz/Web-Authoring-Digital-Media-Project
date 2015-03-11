@@ -1,0 +1,106 @@
+<html>
+<head>
+	<title>Contact</title>
+
+	<link rel="stylesheet" type="text/css" href="newMenu.css">
+</head>
+<body>
+	<div id = "container">
+		<div id = "body">
+			<div class = "menu">
+				<ul class = "menu-list">
+					<li><a href = "index.html">Home</a></li>
+					<li><a href = "HealthDevices.html">Health Devices</a>
+						<ul class = "sub-menu">
+							<li><a href="HealthDevices.html#HeartMonitor">Heart Monitor</a></li>
+							<li><a href="HealthDevices.html#BloodPressure">Blood Pressure Monitor</a></li>
+							<li><a href="HealthDevices.html#Glucose">Glucose Monitoring System</a></li>
+							<li><a href="HealthDevices.html#Scanadau">Scanadu Scout</a></li>
+							<li><a href="HealthDevices.html#Breathalyzer">Mobile Breathalyzer</a></li>
+						</ul>
+					</li>
+					
+					<li><a href= "HealthInformation.html">Health Information</a></li>
+						
+					<li><a href="#">Contact</a></li>
+					<li><a href="About.html">About</a></li>
+				</ul>
+			</div>
+
+			<div id = "title">
+				&emsp;Contact us
+			</div>
+
+			&nbsp;
+
+			<center>
+				<form name = "feedback" action = "mailto:ya68944n@pace.edu">
+					<fieldset>
+						<legend> Basic Information </legend>
+						<label>Name</label> 
+						&nbsp;
+						<input name = "name" type = "text">
+
+						&nbsp; &nbsp;
+						<label>Email</label>
+						&nbsp;
+						<input name = "email" type = "text">
+
+						&nbsp; &nbsp;
+						<label>Age</label>
+						&nbsp;
+						<select name = "age">
+							<option>10 or younger</option>
+							<option>10 - 20</option>
+							<option>20 - 30</option>
+							<option>30 - 40</option>
+							<option>40 - 50</option>
+							<option>50 - 60</option>
+							<option>60 or older</option>
+						</select>
+					</fieldset>
+
+					&nbsp;
+					<fieldset>
+						<legend>Comments</legend>
+						What kind of comment do you have?
+						<br>
+						<input type = "radio" name = "type"> Review
+						&nbsp;
+						<input type = "radio" name = "type"> Suggestion
+						<br>
+						<br>
+						Write your opinion here:
+						<br>
+						<textarea rows = "5" cols = "100"></textarea>
+
+						<br>
+						<br>
+						Which are your favorite apps presented by this website?
+						<br>
+						<input type = "checkbox" name = "chk"> Heart Monitor
+						&nbsp;
+						<input type = "checkbox" name = "chk"> Blood Pressure Monitor
+						&nbsp;
+						<input type = "checkbox" name = "chk"> Glucose Monitoring System
+						&nbsp;
+						<input type = "checkbox" name = "chk"> Scanadu Scout
+						&nbsp;
+						<input type = "checkbox" name = "chk"> Mobile Breathalyzer
+						&nbsp;
+					</fieldset>
+
+					<br />
+					<button type = "submit" style = "font-size: 15; height: 30px; width: 140px">Send feedback </button>
+					&nbsp;
+					<button type = "reset" style = "font-size: 15; height: 30px; width: 140px">Clear information </button>
+					<br>
+					
+
+				</form>
+			</center>
+			<br>
+			<div id = "footer"></div>
+		</div>
+	</div>
+</body>

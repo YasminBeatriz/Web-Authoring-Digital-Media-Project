@@ -1,0 +1,220 @@
+/* My menu style */
+
+*, *:after, *:before
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Ubuntu", sans-serif;
+	/*font-size: 14px;*/
+	line-height: 1.5;
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.menu
+{
+	background: #736AFF; /* Light Slate Blue */
+}
+
+.menu .menu-list .sub-menu /* All (and ONLY) these 3 classes will have this attribute modified */ 
+{
+	list-style: none;
+}
+
+.menu a
+{
+	color: #FFFFFF;
+	text-decoration: none;
+	display: block;
+	cursor: pointer;
+	/*text-transform: uppercase;*/
+	font-size: 15px;
+	/*font-weight: 700;*/
+	letter-spacing: 0.2em;
+}
+
+.menu > .menu-list > li
+{
+	float: left;
+	position: relative;
+}
+
+.menu > .menu-list > li > a
+{
+	padding: 20px;
+	margin: 0 0px;
+	background: #736AFF; /* Light Slate Blue */
+}
+
+.menu > .menu-list > li:hover a
+{
+	background: #444;
+}
+
+.menu > .menu-list > li:hover > .sub-menu
+{
+	display: block;
+}
+
+.menu > .menu-list > li > .sub-menu
+{
+	position: absolute;
+	top: 61px; /* The values of the position in the screen */
+	left: 5px; 
+	background: LightBlue;
+	min-width: 200px;
+	z-index: 1000; /* z-index is the number of priority of the element in a stack. A greater value means that the element will remain in front of the other ones with smaller values*/
+	display: none;
+}
+
+.menu > .menu-list > li > .sub-menu > li > a
+{
+	padding: 10px 20px;
+	font-size: 12px;
+}
+
+.menu > .menu-list > li > .sub-menu > li > a:hover, a:active
+{
+	padding: 10px 20px;
+	background: #B8B8B8;
+}
+
+#wrapper
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 1280px;
+}
+
+.widgets
+{
+	width: 300px;
+	font-size: 12px;
+	text-align: justify;
+	float: left;
+	padding: 20px;
+	margin: 10px;
+	background-color: #E9CFEC; /* Periwinkle */
+	height: 400px;
+}
+
+img.homePictures
+{
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.menu:after
+{
+	content: '.';
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+#title
+{
+	width: 100%;
+	background: #000;
+	color: white;
+	text-transform: uppercase;
+	font-size: 30;
+	font-weight: bold;
+}
+
+#container
+{
+	min-height: 100%;
+	position: relative;
+}
+
+#footer
+{
+	position: absolute;
+	bottom: 0;
+	height: 30px;
+	width: 100%;
+	background-color: #444;
+	color: white;
+}
+
+#footer:before
+{
+	content: "Author: Yasmin Beatriz Alves da Silva. CIT 231 - Web Authoring & Digital Media. PACE UNIVERSITY"; /*Set the general content of the footer */
+	color: white;
+}
+
+#body
+{
+	padding-bottom: 30px;
+}
+
+td.Text
+{
+	text-align: justify;
+	font-size: 14px;
+	color: black;
+	padding: 30px;
+}
+
+td.buttons
+{
+	background-color: #F52887; /* Deep pink */
+	color: white;
+}
+
+td.buttons:hover
+{
+	background-color: #FDEEF4; /* Pearl */
+}
+
+td.buttons a
+{
+	color: white;
+	text-decoration: none;
+	display: block;
+}
+
+td.buttons a:hover
+{
+	color: black;
+}
+
+#odd
+{
+	background: #E9CFEC; /* Periwinkle */ 
+}
+
+.form
+{
+	padding: 15px;
+	border-spacing: 15px;
+}
+
+fieldset
+{
+	padding: 20px;
+	width: 80%;
+	text-align: left;
+	border: 1px groove;
+}
+
+legend
+{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+img.Devices
+{
+	width: 400;
+	height: 200;
+}
